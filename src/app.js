@@ -12,6 +12,7 @@ console.log(path.join(__dirname,'../public'))
 const publicDirectoryPath = path.join(__dirname,'../public')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.use(express.static(publicDirectoryPath))
 
@@ -52,6 +53,6 @@ app.get('/products',(req,res)=>{
     res.send({products: []})
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up and running on port 3000.')
+app.listen(port,()=>{
+    console.log('Server is up and running on port ' + port)
 })
